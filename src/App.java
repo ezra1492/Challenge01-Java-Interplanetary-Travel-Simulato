@@ -1,5 +1,10 @@
+import java.util.Scanner;
+
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-    }
-}
+    static Scanner scanner = new Scanner(System.in);
+    static String[] planetas = {
+        "Mercurio", "Venus", "Marte", "Júpiter", 
+        "Saturno", "Urano", "Neptuno", "Plutón", "Ceres", 
+        "Eris", "Haumea", "Makemake"
+    };
+}    
