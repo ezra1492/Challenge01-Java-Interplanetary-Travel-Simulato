@@ -23,4 +23,23 @@ public class App {
         77.0, 41.0, 628.0, 1275.0, 2723.0, 4351.0, 5906.0, 5910.0, 413.0, 
         10100.0, 13000.0, 6700.0
     };
+
+    static int planetaSeleccionado = -1;
+
+    // Seleccionar un planeta
+    public static void seleccionarPlaneta() {
+        System.out.println("\nSelecciona un planeta:");
+        for (int i = 0; i < planetas.length; i++) {
+            // Imprime el planeta junto con su distancia
+            System.out.println((i + 1) + ". " + planetas[i] + " (Distancia: " + distancias[i] + " millones de km.)");            
+        }
+        System.out.print("Selecciona el número del planeta: ");
+        planetaSeleccionado = scanner.nextInt() - 1;
+        if (planetaSeleccionado >= 0 && planetaSeleccionado < planetas.length) {
+            System.out.println("Has seleccionado: " + planetas[planetaSeleccionado]);
+            System.out.println(descripcionPlaneta[planetaSeleccionado]);
+        } else {
+            System.out.println("Selección no válida.");
+        }
+    }    
 }    
