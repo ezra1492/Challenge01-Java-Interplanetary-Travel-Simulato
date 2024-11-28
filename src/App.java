@@ -42,4 +42,32 @@ public class App {
             System.out.println("Selección no válida.");
         }
     }    
+
+    // Simular eventos aleatorios
+    public static void simularEventos() {
+        String[] eventos = {
+            "Falla en el sistema de navegación",
+            "Impacto con un asteroide",
+            "Pérdida de oxígeno",
+            "Retraso por una tormenta solar"
+        };
+        int evento = (int) (Math.random() * eventos.length);
+
+        System.out.println("\n¡Evento inesperado! " + eventos[evento]);
+        switch (evento) {
+            case 0:
+                System.out.println("Reparando el sistema...");
+                break;
+            case 1:
+                System.out.println("Desviando la nave para evitar daños mayores...");
+                break;
+            case 2:
+                System.out.println("Redistribuyendo los suministros de oxígeno...");
+                break;
+            case 3:
+                System.out.println("Ajustando el curso para minimizar el impacto...");
+                break;
+            
+        }
+    }
 }    
