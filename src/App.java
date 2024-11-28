@@ -18,5 +18,9 @@ public class App {
         "Enano al borde del sistema.", "Rotación rápida, elíptico y enano.", 
         "El último enano de hielo."
     };
-
+    
+    static double[] distancias = {
+        77.0, 41.0, 628.0, 1275.0, 2723.0, 4351.0, 5906.0, 5910.0, 413.0, 
+        10100.0, 13000.0, 6700.0
+    };
 }    
