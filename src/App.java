@@ -38,6 +38,8 @@ public class App {
 
     };
 
+    static double[] velocidades = {4500.0, 5520.0, 8000.0, 6000.0, 1200.0};
+
     static int planetaSeleccionado = -1;
     static int naveSeleccionada = -1;
     static double consumoCombustiblePorKm = 0.1;  // Ejemplo: 0.1 litros por km
@@ -105,6 +107,22 @@ public class App {
             System.out.println("Selección no válida.");
         }
     }    
+
+    // Seleccionar una nave
+    public static void seleccionarNave() {
+        System.out.println("\nSelecciona una nave:");
+        for (int i = 0; i < naves.length; i++) {
+            System.out.println((i + 1) + ". " + naves[i] + " (Velocidad: " + velocidades[i] + " km/h)");
+            System.out.println(capacidadNave[i]);
+        }
+        System.out.print("Selecciona el número de la nave: ");
+        naveSeleccionada = scanner.nextInt() - 1;
+        if (naveSeleccionada >= 0 && naveSeleccionada < naves.length) {
+            System.out.println("Has seleccionado: " + naves[naveSeleccionada]);
+        } else {
+            System.out.println("Selección no válida.");
+        }
+    }
 
     // Simular eventos aleatorios
     public static void simularEventos() {
