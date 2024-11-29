@@ -38,11 +38,45 @@ public class App {
 
     };
 
-
     static int planetaSeleccionado = -1;
     static int naveSeleccionada = -1;
     static double consumoCombustiblePorKm = 0.1;  // Ejemplo: 0.1 litros por km
     static double consumoOxigenoPorPasajero = 0.05; // Ejemplo: 0.05 unidades por pasajero por km
+
+    public static void main(String[] args) {
+        int opción;
+        System.out.println("\n*****Bienvenido al Menú Principal***** \n****escoge una opción para empezar****");
+        do {
+            mostrarMenu();
+            try {
+                opción = scanner.nextInt();
+                switch (opción) {
+                    case 1:
+                        seleccionarPlaneta();
+                        break;
+                    case 2:
+                        seleccionarNave();
+                        break;
+                    case 3:
+                        calcularRecursos();
+                        break;
+                    case 4:
+                        simularViaje();
+                        break;
+                    case 5:
+                        System.out.println("¡Hasta luego!");
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida. Por favor, introduce un número.");
+                scanner.next(); // Limpiar el buffer
+                opción = -1;
+            }
+        } while (opción != 5);
+    }
 
     // Seleccionar un planeta
     public static void seleccionarPlaneta() {
