@@ -106,6 +106,22 @@ public class App {
         }
     }    
 
+    // Seleccionar una nave
+    public static void seleccionarNave() {
+        System.out.println("\nSelecciona una nave:");
+        for (int i = 0; i < naves.length; i++) {
+            System.out.println((i + 1) + ". " + naves[i] + " (Velocidad: " + velocidades[i] + " km/h)");
+            System.out.println(capacidadNave[i]);
+        }
+        System.out.print("Selecciona el número de la nave: ");
+        naveSeleccionada = scanner.nextInt() - 1;
+        if (naveSeleccionada >= 0 && naveSeleccionada < naves.length) {
+            System.out.println("Has seleccionado: " + naves[naveSeleccionada]);
+        } else {
+            System.out.println("Selección no válida.");
+        }
+    }
+
     // Simular eventos aleatorios
     public static void simularEventos() {
         String[] eventos = {
