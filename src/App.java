@@ -38,6 +38,8 @@ public class App {
 
     };
 
+    static double[] velocidades = {4500.0, 5520.0, 8000.0, 6000.0, 1200.0};
+
     static int planetaSeleccionado = -1;
     static int naveSeleccionada = -1;
     static double consumoCombustiblePorKm = 0.1;  // Ejemplo: 0.1 litros por km
