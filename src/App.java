@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class App {
     static Scanner scanner = new Scanner(System.in);
@@ -24,7 +25,24 @@ public class App {
         10100.0, 13000.0, 6700.0
     };
 
+    static String[] naves = {
+        "Prometheus Ark", "Astra Nova", "Cosmos Seeker",
+        "Luminous Horizon", "Galactic Dawn"
+    };
+
+    static String[] capacidadNave = { 
+        "1111 pasajeros", "300 pasajeros + 1000 embriones + 30 tripulantes + 3 deidades",
+        "1518 pasajeros, 12 tripulantes y 25 científicos", 
+        "200 pasajeros + 150 embriones + 25 científicos + 25 granjeros + 20 connoisseurs",
+        "40 pasajeros + 20 aprendices + 9 tripulantes"
+
+    };
+
+
     static int planetaSeleccionado = -1;
+    static int naveSeleccionada = -1;
+    static double consumoCombustiblePorKm = 0.1;  // Ejemplo: 0.1 litros por km
+    static double consumoOxigenoPorPasajero = 0.05; // Ejemplo: 0.05 unidades por pasajero por km
 
     // Seleccionar un planeta
     public static void seleccionarPlaneta() {
