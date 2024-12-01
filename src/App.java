@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class App {
     static Scanner scanner = new Scanner(System.in);
@@ -107,6 +107,35 @@ public class App {
             System.out.println("Selección no válida.");
         }
     }    
+
+    // Calcular recursos necesarios
+    public static void calcularRecursos() {
+        if (planetaSeleccionado == -1 || naveSeleccionada == -1) {
+            System.out.println("\nDebes seleccionar primero un planeta y una nave.");
+            return;
+        }
+
+        double distancia = distancias[planetaSeleccionado] * 1000000; // Conversión a km
+        double velocidad = velocidades[naveSeleccionada];
+
+        System.out.print("Introduce la cantidad de pasajeros: ");
+        int pasajeros = scanner.nextInt();
+
+        double tiempoViaje = calcularTiempoViaje(distancia, velocidad);
+        double combustibleRequerido = distancia * consumoCombustiblePorKm;
+        double oxigenoRequerido = distancia * consumoOxigenoPorPasajero * pasajeros;
+
+        System.out.println("\nRecursos necesarios:");
+        System.out.println("Combustible: " + combustibleRequerido + " litros");
+        System.out.println("Oxígeno: " + oxigenoRequerido + " unidades");
+        System.out.println("Tiempo estimado de viaje: " + tiempoViaje / 24 + " dias (o " + (tiempoViaje / 8766) + " años)");
+    }
+
+    // Calcular tiempo de viaje
+    public static double calcularTiempoViaje(double distancia, double velocidad) {
+        return distancia / velocidad;
+    }
+
 
     // Seleccionar una nave
     public static void seleccionarNave() {
